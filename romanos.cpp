@@ -63,7 +63,10 @@ int romanos_para_decimal(const char* num_romano) {
         } else {
             total += atual;
         }
-        
+    }
+    
+    if (total > 3000) {
+        return -1;
     }
 
     return total;

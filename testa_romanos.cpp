@@ -46,4 +46,16 @@ TEST_CASE("Numeros romanos - compostos", "[romanos]") {
     REQUIRE(romanos_para_decimal("D") == 500);
     REQUIRE(romanos_para_decimal("CM") == 900);
     REQUIRE(romanos_para_decimal("M") == 1000);
+    REQUIRE(romanos_para_decimal("CXLIV") == 144);
+    REQUIRE(romanos_para_decimal("CLX") == 160);
+    REQUIRE(romanos_para_decimal("CCLXXX") == 280);
+    REQUIRE(romanos_para_decimal("CCCXC") == 390);
+    REQUIRE(romanos_para_decimal("CDXLIV") == 444);
+    REQUIRE(romanos_para_decimal("DLV") == 555);
+    REQUIRE(romanos_para_decimal("MMCDXLIV") == 2444);
+}
+
+TEST_CASE("Numeros romanos - acima de 3000", "[romanos]") {
+    REQUIRE(romanos_para_decimal("MMMM") == -1);
+    REQUIRE(romanos_para_decimal("MMMI") == -1);
 }
