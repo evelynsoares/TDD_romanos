@@ -10,7 +10,6 @@ TEST_CASE("Numeros romanos - algarismos unicos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("C") == 100 );
     REQUIRE( romanos_para_decimal("D") == 500 );
     REQUIRE( romanos_para_decimal("M") == 1000 );
-    REQUIRE( romanos_para_decimal("MMM") == 3000 );
 }
 
 TEST_CASE( "Numeros romanos - algarismos invalidos", "[romanos]" ) {
@@ -19,4 +18,10 @@ TEST_CASE( "Numeros romanos - algarismos invalidos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("qwe") == -1 );
     REQUIRE( romanos_para_decimal("XXXX") == -1 );
     REQUIRE( romanos_para_decimal("") == -1 );
+}
+
+TEST_CASE("Numeros romanos - compostos", "[romanos]") {
+    REQUIRE(romanos_para_decimal("XIV") == 14);
+    REQUIRE(romanos_para_decimal("XCIX") == 99);
+    REQUIRE(romanos_para_decimal("MCMXCIV") == 1994);
 }

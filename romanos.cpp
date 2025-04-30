@@ -1,15 +1,27 @@
 #include "romanos.hpp"
 #include <string.h>
 
+int valor(char c) {
+        
+    switch (c) {
+        case 'I' : return 1;
+        case 'V' : return 5;
+        case 'X' : return 10;
+        case 'L' : return 50;
+        case 'C' : return 100;
+        case 'D' : return 500;
+        case 'M' : return 1000;
+        default: return -1;
+    }
+    return -1;
+}
+
 int romanos_para_decimal(const char* num_romano) {
-    if (strcmp(num_romano, "I") == 0) return 1;
-    if (strcmp(num_romano, "V") == 0) return 5;
-    if (strcmp(num_romano, "X") == 0) return 10;
-    if (strcmp(num_romano, "L") == 0) return 50;
-    if (strcmp(num_romano, "C") == 0) return 100;
-    if (strcmp(num_romano, "D") == 0) return 500;
-    if (strcmp(num_romano, "M") == 0) return 1000;
-    if (strcmp(num_romano, "MMM") == 0) return 3000;
+    int total = 0;
+    int tamanho = strlen(num_romano);
     
+    for (int i = 0; i < tamanho; ++i) {
+        if (valor(num_romano[i]) == -1) return -1;
+    }
     return -1;
 }
