@@ -27,4 +27,11 @@ TEST_CASE("Numeros romanos - compostos", "[romanos]") {
     REQUIRE(romanos_para_decimal("XIV") == 14);
     REQUIRE(romanos_para_decimal("XCIX") == 99);
     REQUIRE(romanos_para_decimal("MCMXCIV") == 1994);
+    REQUIRE(romanos_para_decimal("II") == 2);
+    REQUIRE(romanos_para_decimal("III") == 3);
+    REQUIRE(romanos_para_decimal("IV") == 4);
+    REQUIRE(romanos_para_decimal("VI") == 6);
+    REQUIRE(romanos_para_decimal("VII") == 7);
+    REQUIRE(romanos_para_decimal("IX") == 9);
+    REQUIRE(romanos_para_decimal("XII") == 12);
 }
