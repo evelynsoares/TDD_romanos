@@ -17,7 +17,10 @@ TEST_CASE( "Numeros romanos - algarismos invalidos", "[romanos]" ) {
     REQUIRE( romanos_para_decimal("i") == -1 );
     REQUIRE( romanos_para_decimal("qwe") == -1 );
     REQUIRE( romanos_para_decimal("XXXX") == -1 );
-    REQUIRE( romanos_para_decimal("") == -1 );
+    REQUIRE( romanos_para_decimal("VV") == -1 );
+    REQUIRE( romanos_para_decimal("VX") == -1 );
+    REQUIRE( romanos_para_decimal("LC") == -1 );
+    REQUIRE( romanos_para_decimal("DM") == -1 );
 }
 
 TEST_CASE("Numeros romanos - compostos", "[romanos]") {
